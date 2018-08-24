@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Index = () => {
+let Index = () => {
   return <div>Hola react! Si o No ?</div>;
 };
 
