@@ -19,7 +19,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,css,md}": [
-      "eslint --fix --ext .js,.jsx src"
+      "eslint --ext .js,.jsx src"
     ]
   },
   "author": "jocabarcasg@hotmail.com",
