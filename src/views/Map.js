@@ -1,7 +1,9 @@
 import React from 'react';
 import MapGL from 'react-map-gl';
+import {Marker} from 'react-map-gl';
 
 function Map(props) {
+  console.log(props.children)
   return (
     <div style={{height: '100%'}}>
       <MapGL 
@@ -11,8 +13,14 @@ function Map(props) {
         height="100%"
         mapStyle="mapbox://styles/mapbox/streets-v9"
         onViewportChange={props.onViewportChange}
+        onDblClick={props.onDblClick}
         dragToRotate={true}
-        mapboxApiAccessToken={props.mapApiKey} />
+        mapboxApiAccessToken={props.mapApiKey} >
+        {props.children}
+        <Marker latitude={3.900749} longitude={-73.073215}>
+          <div>You are here</div>
+        </Marker>
+        </MapGL>
     </div>
   )
 }
