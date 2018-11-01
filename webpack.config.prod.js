@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   mode: 'production',
   output: {
@@ -6,4 +8,15 @@ module.exports = {
     chunkFilename: '[name].[chunkhash].js',
   },
   devtool: 'source-map',
+  module: {
+  	rules: [
+      {
+    		test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader!sass-loader'
+        })
+      }
+    ]
+  }
 }

@@ -5,7 +5,12 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   module: {
-    rules: []
+    rules: [
+      {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader!sass-loader?sourceMap'
+      }
+    ]
   },
   output: {
     path: __dirname + '/build',
@@ -14,4 +19,10 @@ module.exports = {
   },
   plugins: [
   ],
+  devtool: 'source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    compress: true,
+    port: 8080
+  }
 }
