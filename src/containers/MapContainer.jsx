@@ -61,14 +61,14 @@ export default class MapContainer extends Component {
   render() {
     const {viewport, settings} = this.state;
     return (
-        <Map 
-          viewport={viewport} 
-          settings={settings}
-          onViewportChange={this._onViewportChange}
-          onDblClick={this._onDbClick}
-          mapApiKey={config.mapApiKey}>
-          { this.state.alerts.map(this._renderAlertsMarker) }
-        </Map>
+      <Map 
+        viewport={viewport} 
+        settings={settings}
+        onViewportChange={this._onViewportChange}
+        onDblClick={this._onDbClick}
+        mapApiKey={config.mapApiKey}>
+        { this.state.alerts.map(this._renderAlertsMarker) }
+      </Map>
     )
   }
 }

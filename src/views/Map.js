@@ -17,10 +17,7 @@ function Map(props) {
         dragToRotate={true}
         mapboxApiAccessToken={props.mapApiKey} >
         {props.children}
-        <Marker latitude={3.900749} longitude={-73.073215}>
-          <div>You are here</div>
-        </Marker>
-        </MapGL>
+      </MapGL>
     </div>
   )
 }
